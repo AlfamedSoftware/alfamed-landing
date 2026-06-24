@@ -1,18 +1,22 @@
 import type { Metadata } from "next"
 import "./globals.css"
 
-const BASE_URL = "https://alfamed-landing.vercel.app"
+const BASE_URL = "https://alfamed-page.vercel.app"
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Alfamed — Gestão Clínica Completa para Unidades de Saúde",
+    default: "Alfamed | Sistema de Gestão de Saúde — Agendamento e Atendimentos",
     template: "%s | Alfamed",
   },
   description:
-    "Plataforma web e mobile integrada para gestão clínica. Gerencie profissionais, agendas, atendimentos, especialidades e procedimentos em um só lugar.",
+    "Alfamed é o sistema de gestão de saúde completo para unidades de saúde. Plataforma web e mobile integrada: profissionais, agendas, atendimentos, prontuário digital e app para pacientes.",
   keywords: [
+    "alfamed",
+    "alfamed sistema de saude",
+    "sistema de saude",
+    "sistema de gestão de saúde",
     "gestão clínica",
     "sistema médico",
     "agendamento médico",
@@ -22,9 +26,12 @@ export const metadata: Metadata = {
     "software médico",
     "agendamento de consultas",
     "controle de atendimentos",
-    "alfamed",
     "saúde digital",
     "gestão hospitalar",
+    "plataforma de saúde digital",
+    "software gestão de saúde",
+    "gestão de clínica médica",
+    "sistema para unidades de saúde",
   ],
   authors: [{ name: "Alfamed" }],
   creator: "Alfamed",
@@ -48,9 +55,9 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: BASE_URL,
     siteName: "Alfamed",
-    title: "Alfamed — Gestão Clínica Completa para Unidades de Saúde",
+    title: "Alfamed | Sistema de Gestão de Saúde — Agendamento e Atendimentos",
     description:
-      "Plataforma web e mobile integrada para gestão clínica. Profissionais, agendas, atendimentos e prontuários em um só sistema.",
+      "Alfamed é o sistema de gestão de saúde completo para unidades de saúde. Plataforma web e mobile: profissionais, agendas, atendimentos e prontuários em um só sistema.",
     images: [
       {
         url: "/og-image.png",
@@ -64,9 +71,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Alfamed — Gestão Clínica Completa",
+    title: "Alfamed | Sistema de Gestão de Saúde",
     description:
-      "Plataforma web e mobile integrada para gestão clínica. Profissionais, agendas, atendimentos e prontuários em um só sistema.",
+      "Alfamed é o sistema de gestão de saúde completo para unidades de saúde. Profissionais, agendas, atendimentos e prontuários em um só sistema.",
     images: ["/og-image.png"],
   },
 
@@ -140,12 +147,60 @@ const jsonLd = {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
       name: "Alfamed",
+      alternateName: "Alfamed Sistema de Saúde",
+      description: "Alfamed é um sistema de gestão de saúde digital para unidades de saúde, clínicas e consultórios médicos.",
       url: BASE_URL,
       logo: {
         "@type": "ImageObject",
         url: `${BASE_URL}/og-image.png`,
       },
       sameAs: [],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${BASE_URL}/#faq`,
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "O que é o Alfamed?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O Alfamed é um sistema de gestão de saúde — uma plataforma web e mobile completa para unidades de saúde. Permite gerenciar profissionais, agendas, atendimentos, especialidades, procedimentos e prontuários digitais em um único lugar.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "O Alfamed é um sistema de saúde para quais tipos de unidades?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O Alfamed atende clínicas médicas, consultórios e unidades de saúde de todos os portes. O sistema suporta multi-unidades, permitindo que uma mesma organização gerencie várias unidades com controle de acesso individualizado por perfil.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quais funcionalidades o Alfamed sistema de saúde oferece?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O Alfamed oferece: gestão de profissionais de saúde, agendamento de consultas, prontuário digital, gestão de especialidades médicas, controle de procedimentos, app mobile para pacientes (Android e iOS), controle de acesso por perfil (médico, administrativo, assistente, paciente) e ServiceDesk para equipe interna.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "O Alfamed tem aplicativo mobile para pacientes?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sim. O Alfamed disponibiliza app mobile para Android e iOS voltado para pacientes. Pelo app, o paciente pode se cadastrar, visualizar consultas agendadas, acompanhar o status dos atendimentos e acessar prontuário e resultados de exames.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Como funciona o agendamento no sistema Alfamed?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O Alfamed possui um módulo de agendas com grade de horários em tempo real. O administrativo cria as agendas dos médicos e agenda pacientes nas vagas. O status do atendimento é acompanhado em tempo real: Agendado, Em andamento ou Finalizado — tanto no sistema web quanto no app.",
+          },
+        },
+      ],
     },
   ],
 }

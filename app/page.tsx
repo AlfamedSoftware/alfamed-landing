@@ -217,11 +217,11 @@ function Platform() {
             A plataforma
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900">
-            Tudo que uma unidade de saúde precisa
+            Alfamed: o sistema de saúde completo para sua unidade
           </h2>
           <p className="mt-4 text-gray-600 text-lg leading-relaxed">
             Do cadastro de profissionais ao prontuário do paciente — o Alfamed
-            centraliza a gestão clínica com simplicidade e segurança.
+            centraliza toda a gestão clínica com simplicidade e segurança.
           </p>
         </div>
 
