@@ -15,7 +15,6 @@ import {
   Stethoscope,
   ChevronRight,
   LayoutDashboard,
-  Search,
   Bell,
 } from "lucide-react"
 import { Navbar } from "@/components/navbar"
@@ -205,7 +204,7 @@ function Platform() {
     {
       icon: <UserCheck className="w-5 h-5" />,
       title: "Controle por perfil",
-      desc: "Médico, Administrativo, Assistente e Alfamed Interno — cada papel vê apenas o que precisa.",
+      desc: "Médico, Administrativo e Assistente — cada papel vê apenas o que precisa.",
     },
   ]
 
@@ -350,99 +349,6 @@ function Features() {
               </ul>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── ServiceDesk ──────────────────────────────────────────────────────────────
-
-function ServiceDesk() {
-  return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Visual */}
-          <div className="order-2 lg:order-1">
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-2xl">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-3 h-3 rounded-full bg-red-400" />
-                <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                <div className="w-3 h-3 rounded-full bg-green-400" />
-                <span className="ml-3 text-slate-400 text-xs font-mono">
-                  alfamed / ServiceDesk
-                </span>
-              </div>
-
-              <div className="space-y-3">
-                {[
-                  { name: "Unidade Centro SP", units: "12 profissionais", status: "Ativa" },
-                  { name: "Unidade Norte RJ", units: "8 profissionais", status: "Ativa" },
-                  { name: "Unidade Sul MG", units: "5 profissionais", status: "Ativa" },
-                ].map((u) => (
-                  <div
-                    key={u.name}
-                    className="flex items-center justify-between bg-slate-700/50 rounded-xl px-4 py-3"
-                  >
-                    <div>
-                      <p className="text-white text-sm font-medium">{u.name}</p>
-                      <p className="text-slate-400 text-xs">{u.units}</p>
-                    </div>
-                    <span className="px-2 py-0.5 rounded-full bg-green-500/20 text-green-400 text-xs font-medium">
-                      {u.status}
-                    </span>
-                  </div>
-                ))}
-
-                <div className="mt-4 pt-4 border-t border-slate-700">
-                  <p className="text-slate-400 text-xs mb-2">UPM — Usuários & Profissionais</p>
-                  <div className="flex items-center gap-3 bg-slate-700/50 rounded-xl px-4 py-3">
-                    <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold">
-                      T
-                    </div>
-                    <div>
-                      <p className="text-white text-sm font-medium">Thiago R.</p>
-                      <p className="text-slate-400 text-xs">Alfamed Interno</p>
-                    </div>
-                    <span className="ml-auto px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 text-xs">
-                      Admin
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Copy */}
-          <div className="order-1 lg:order-2">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
-              ServiceDesk
-            </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900">
-              Central de controle para a equipe Alfamed
-            </h2>
-            <p className="mt-4 text-gray-600 text-lg leading-relaxed">
-              Área exclusiva (domínio <code className="text-blue-600">@alfamed.com</code>) para
-              gerenciar todas as unidades cadastradas na plataforma, controlar usuários e
-              profissionais vinculados.
-            </p>
-            <ul className="mt-8 space-y-4">
-              {[
-                { icon: <Building2 className="w-5 h-5" />, text: "Listagem e detalhes de todas as unidades" },
-                { icon: <Users className="w-5 h-5" />, text: "Gestão de usuários e profissionais (UPM)" },
-                { icon: <Shield className="w-5 h-5" />, text: "Acesso restrito a e-mails @alfamed.com" },
-                { icon: <Search className="w-5 h-5" />, text: "Visualização completa de vínculos e perfis" },
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3">
-                  <div className="shrink-0 w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                    {item.icon}
-                  </div>
-                  <span className="text-gray-700">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </div>
     </section>
@@ -861,7 +767,6 @@ export default function Page() {
         <Hero />
         <Platform />
         <Features />
-        <ServiceDesk />
         <Mobile />
         <Roles />
         <HowItWorks />

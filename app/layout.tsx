@@ -79,7 +79,7 @@ export const metadata: Metadata = {
 
   verification: {
     // Substitua pelos códigos reais após verificar no Google Search Console e Bing Webmaster Tools
-    google: "COLE_AQUI_SEU_CODIGO_GOOGLE",
+    google: "GqXBVQRz-Nq6TSaF08o6VzI93EMGwTuMVxOORB62q4o",
     other: {
       "msvalidate.01": ["COLE_AQUI_SEU_CODIGO_BING"],
     },
