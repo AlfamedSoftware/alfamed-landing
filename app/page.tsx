@@ -16,7 +16,13 @@ import {
   ChevronRight,
   LayoutDashboard,
   Bell,
+  FlaskConical,
+  Microscope,
+  Mail,
+  ScanLine,
+  UserCog,
 } from "lucide-react"
+import Image from "next/image"
 import { Navbar } from "@/components/navbar"
 
 const APP_URL = "https://web-alfamed.vercel.app"
@@ -47,9 +53,9 @@ function Hero() {
             </h1>
 
             <p className="mt-6 text-lg text-blue-100 max-w-xl leading-relaxed">
-              Plataforma completa para unidades de saúde. Gerencie profissionais,
-              especialidades, procedimentos e atendimentos — tudo integrado em um
-              único sistema.
+              Plataforma completa para consultórios e pequenas clínicas. Gerencie
+              profissionais, especialidades, procedimentos e atendimentos — tudo
+              integrado em um único sistema.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -216,11 +222,13 @@ function Platform() {
             A plataforma
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900">
-            Alfamed: o sistema de saúde completo para sua unidade
+            Alfamed: gestão clínica completa para consultórios e clínicas
           </h2>
           <p className="mt-4 text-gray-600 text-lg leading-relaxed">
             Do cadastro de profissionais ao prontuário do paciente — o Alfamed
-            centraliza toda a gestão clínica com simplicidade e segurança.
+            centraliza toda a gestão clínica de consultórios e pequenas clínicas
+            com simplicidade e segurança. Um software desenvolvido pela{" "}
+            <span className="font-semibold text-blue-600">Moonlab Ink</span>.
           </p>
         </div>
 
@@ -267,8 +275,8 @@ function Features() {
       icon: <Activity className="w-6 h-6" />,
       color: "green",
       title: "Atendimentos",
-      desc: "Condução do atendimento clínico com ciclo completo de status, notas clínicas e diagnóstico.",
-      items: ["Prontuário com notas clínicas", "Diagnóstico por atendimento", "Ciclo: Agendado → Em andamento → Finalizado", "Registro de falta do paciente"],
+      desc: "Condução do atendimento médico com ciclo completo de status, notas clínicas, diagnóstico e solicitação de exames externos.",
+      items: ["Prontuário com notas clínicas", "Diagnóstico por atendimento", "Solicitação de exames externos", "Ciclo: Agendado → Em andamento → Finalizado"],
     },
     {
       icon: <Star className="w-6 h-6" />,
@@ -316,13 +324,13 @@ function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
-            Módulos web
+            Módulo Base
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900">
             Funcionalidades completas para sua equipe
           </h2>
           <p className="mt-4 text-gray-600 text-lg">
-            Cada módulo foi construído para o fluxo real de uma unidade de saúde.
+            Cada módulo foi construído para o fluxo real de um consultório ou clínica.
           </p>
         </div>
 
@@ -355,29 +363,95 @@ function Features() {
   )
 }
 
+// ─── Módulo 1: Gestão de Exames ──────────────────────────────────────────────
+
+function ExamModule() {
+  const features = [
+    {
+      icon: <FlaskConical className="w-5 h-5" />,
+      title: "Solicitação de exames internos",
+      desc: "Médicos solicitam exames diretamente no sistema durante o atendimento, sem sair do fluxo clínico.",
+    },
+    {
+      icon: <ScanLine className="w-5 h-5" />,
+      title: "Fluxo de coleta",
+      desc: "Controle do ciclo completo: solicitação → coleta → análise → disponibilização do laudo.",
+    },
+    {
+      icon: <Microscope className="w-5 h-5" />,
+      title: "Disponibilização do laudo",
+      desc: "Laudos disponibilizados para o médico solicitante e acessíveis pelo paciente no app mobile.",
+    },
+    {
+      icon: <UserCog className="w-5 h-5" />,
+      title: "Perfil Técnico Executante",
+      desc: "Novo cargo exclusivo do módulo: acesso ao fluxo de coleta e registro de resultados de exames.",
+    },
+  ]
+
+  return (
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-100 text-violet-700 text-xs font-semibold uppercase tracking-wide mb-3">
+            Módulo 1
+          </span>
+          <h2 className="mt-1 text-3xl sm:text-4xl font-bold text-gray-900">
+            Gestão de Exames
+          </h2>
+          <p className="mt-4 text-gray-600 text-lg">
+            Expansão opcional que integra exames laboratoriais e de imagem ao
+            fluxo clínico — da solicitação médica à entrega do laudo.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((f) => (
+            <div
+              key={f.title}
+              className="bg-violet-50 rounded-2xl p-6 border border-violet-100 hover:shadow-md transition-shadow"
+            >
+              <div className="w-10 h-10 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center mb-4">
+                {f.icon}
+              </div>
+              <h3 className="font-bold text-gray-900">{f.title}</h3>
+              <p className="mt-2 text-sm text-gray-600 leading-relaxed">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ─── Mobile ───────────────────────────────────────────────────────────────────
 
 function Mobile() {
   const mobileFeatures = [
     {
-      icon: <UserCheck className="w-5 h-5" />,
-      title: "Cadastro como paciente",
-      desc: "Crie sua conta informando nome, CPF, e-mail, telefone e data de nascimento.",
+      icon: <Calendar className="w-5 h-5" />,
+      title: "Auto agendamento",
+      desc: "O próprio paciente agenda sua consulta pelo app, escolhendo especialidade, médico e horário disponível.",
     },
     {
-      icon: <Calendar className="w-5 h-5" />,
-      title: "Agendamentos",
-      desc: "Visualize suas consultas agendadas e acompanhe o status de cada atendimento.",
+      icon: <ClipboardList className="w-5 h-5" />,
+      title: "Anamnese",
+      desc: "Preenchimento da ficha de anamnese diretamente pelo app antes da consulta.",
+    },
+    {
+      icon: <Clock className="w-5 h-5" />,
+      title: "Agendamentos futuros",
+      desc: "Visualize todas as consultas agendadas com data, horário e status em tempo real.",
     },
     {
       icon: <FileText className="w-5 h-5" />,
-      title: "Prontuário e exames",
-      desc: "Acesse seu histórico clínico, resultados de exames e fichas de anamnese.",
+      title: "Prontuário do paciente",
+      desc: "Acesse seu histórico clínico completo, notas médicas e diagnósticos de atendimentos anteriores.",
     },
     {
-      icon: <Bell className="w-5 h-5" />,
-      title: "Perfil pessoal",
-      desc: "Atualize seus dados, troque de senha e gerencie seu acesso à plataforma.",
+      icon: <FlaskConical className="w-5 h-5" />,
+      title: "Exames",
+      desc: "Acompanhe seus exames solicitados e adicione exames externos ao seu cadastro.",
     },
   ]
 
@@ -394,9 +468,9 @@ function Mobile() {
               Na palma da mão do seu paciente
             </h2>
             <p className="mt-4 text-gray-600 text-lg leading-relaxed">
-              O app Alfamed para Android e iOS conecta o paciente diretamente à
-              unidade de saúde — desde o cadastro até o acompanhamento dos seus
-              atendimentos.
+              O app Alfamed conecta o paciente diretamente ao consultório ou
+              clínica — do auto agendamento ao acompanhamento de exames e
+              prontuário.
             </p>
 
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
@@ -413,9 +487,15 @@ function Mobile() {
               ))}
             </div>
 
-            <div className="mt-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium">
-              <Smartphone className="w-4 h-4" />
-              Disponível para Android e iOS
+            <div className="mt-8 flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200 text-green-700 text-sm font-medium">
+                <Smartphone className="w-4 h-4" />
+                Android — disponível na Play Store
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 text-gray-500 text-sm font-medium">
+                <Smartphone className="w-4 h-4" />
+                iOS — em desenvolvimento
+              </span>
             </div>
           </div>
 
@@ -502,31 +582,31 @@ function Mobile() {
 function Roles() {
   const roles = [
     {
-      icon: <Stethoscope className="w-6 h-6" />,
-      title: "Médico",
-      color: "blue",
-      desc: "Acessa apenas sua própria agenda, conduz atendimentos e registra prontuários, diagnósticos e notas clínicas.",
-      badge: "Web",
-    },
-    {
       icon: <LayoutDashboard className="w-6 h-6" />,
-      title: "Administrativo",
+      title: "Administrador",
       color: "violet",
-      desc: "Gestão completa da unidade: profissionais, especialidades, procedimentos, agendas e agendamentos de pacientes.",
+      desc: "Gestão completa do consultório ou clínica: profissionais, especialidades, procedimentos, agendas e agendamentos.",
       badge: "Web",
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Assistente Administrativo",
       color: "cyan",
-      desc: "Acesso focado em agendas — agenda e gerencia pacientes nas vagas disponíveis dos médicos da unidade.",
+      desc: "Acesso focado em agendas — agenda e gerencia pacientes nas vagas disponíveis dos médicos.",
+      badge: "Web",
+    },
+    {
+      icon: <Stethoscope className="w-6 h-6" />,
+      title: "Médico",
+      color: "blue",
+      desc: "Acessa sua própria agenda, conduz atendimentos, registra prontuários, diagnósticos, notas clínicas e solicita exames.",
       badge: "Web",
     },
     {
       icon: <Smartphone className="w-6 h-6" />,
       title: "Paciente",
       color: "green",
-      desc: "Cria conta pelo app mobile, visualiza consultas agendadas, acessa prontuário e exames.",
+      desc: "Auto agendamento, preenchimento de anamnese, consulta de prontuário e acompanhamento de exames pelo app.",
       badge: "Mobile",
     },
   ]
@@ -618,7 +698,7 @@ function HowItWorks() {
             Simples de usar, poderoso de verdade
           </h2>
           <p className="mt-4 text-gray-600 text-lg">
-            Em três passos, sua unidade está operando com o Alfamed.
+            Em três passos, seu consultório ou clínica está operando com o Alfamed.
           </p>
         </div>
 
@@ -653,7 +733,7 @@ function CTA() {
     <section className="py-20 bg-gradient-to-r from-blue-700 to-cyan-600">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white">
-          Pronto para modernizar sua unidade de saúde?
+          Pronto para modernizar seu consultório ou clínica?
         </h2>
         <p className="mt-4 text-blue-100 text-lg max-w-2xl mx-auto">
           Acesse o Alfamed agora e comece a gerenciar profissionais, agendas e
@@ -669,7 +749,50 @@ function CTA() {
             Acessar o sistema
             <ArrowRight className="w-5 h-5" />
           </a>
+          <a
+            href="#contato"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-white/50 text-white font-bold text-lg hover:bg-white/10 transition-colors"
+          >
+            Falar com a Moonlab Ink
+          </a>
         </div>
+      </div>
+    </section>
+  )
+}
+
+// ─── Contato ─────────────────────────────────────────────────────────────────
+
+function Contact() {
+  return (
+    <section id="contato" className="py-20 bg-gray-50">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">
+          Contato
+        </span>
+        <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900">
+          Quer contratar o Alfamed?
+        </h2>
+        <p className="mt-4 text-gray-600 text-lg leading-relaxed">
+          O Alfamed é um software desenvolvido pela{" "}
+          <span className="font-semibold text-blue-600">Moonlab Ink</span>.
+          Entre em contato para saber mais sobre planos, implantação e módulos
+          disponíveis para seu consultório ou clínica.
+        </p>
+
+        <div className="mt-10">
+          <a
+            href="mailto:moonlanink@gmail.com"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg"
+          >
+            <Mail className="w-5 h-5" />
+            moonlanink@gmail.com
+          </a>
+        </div>
+
+        <p className="mt-6 text-sm text-gray-400">
+          Respondemos em até 1 dia útil
+        </p>
       </div>
     </section>
   )
@@ -687,14 +810,21 @@ function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">A</span>
-              </div>
-              <span className="font-bold text-lg text-white">Alfamed</span>
+              <Image
+                src="/logo.png"
+                alt="Alfamed"
+                width={120}
+                height={36}
+                className="h-9 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
-              Plataforma integrada de gestão clínica para unidades de saúde. Web
-              e mobile, do agendamento ao atendimento.
+              Software de gestão clínica para consultórios e pequenas clínicas.
+              Web e mobile, do agendamento ao atendimento.
+            </p>
+            <p className="text-xs text-slate-500 mt-3">
+              Um software desenvolvido pela{" "}
+              <span className="text-slate-400 font-medium">Moonlab Ink</span>
             </p>
           </div>
 
@@ -742,6 +872,11 @@ function Footer() {
                   Como funciona
                 </a>
               </li>
+              <li>
+                <a href="#contato" className="hover:text-white transition-colors">
+                  Contato
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -749,7 +884,7 @@ function Footer() {
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm">© {year} Alfamed. Todos os direitos reservados.</p>
           <p className="text-xs text-slate-600">
-            Gestão clínica inteligente para unidades de saúde
+            Gestão clínica inteligente para consultórios e clínicas · Moonlab Ink
           </p>
         </div>
       </div>
@@ -767,10 +902,12 @@ export default function Page() {
         <Hero />
         <Platform />
         <Features />
+        <ExamModule />
         <Mobile />
         <Roles />
         <HowItWorks />
         <CTA />
+        <Contact />
       </main>
       <Footer />
     </>

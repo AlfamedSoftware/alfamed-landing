@@ -1,0 +1,34 @@
+# Alfamed
+
+> Software de gestão clínica para consultórios e pequenas clínicas, desenvolvido pela Moonlab Ink.
+
+O Alfamed é uma plataforma web + app mobile Android que centraliza a gestão clínica: profissionais, especialidades, procedimentos, agendas, agendamentos e atendimentos médicos com prontuário digital.
+
+## Desenvolvedor
+
+**Moonlab Ink** — moonlanink@gmail.com
+
+## Módulos
+
+### Módulo Base
+- **Cargos:** Administrador, Assistente Administrativo, Médico (web) · Paciente (mobile)
+- Cadastro e gestão de profissionais, especialidades e procedimentos
+- Gestão de agendas e agendamentos com grade de horários em tempo real
+- Atendimento médico: prontuário, notas clínicas, diagnóstico, solicitação de exames externos
+- Multi-unidades com controle de acesso por perfil
+
+### Módulo 1 — Gestão de Exames
+- **Cargo adicional:** Técnico Executante
+- Solicitação de exames internos durante o atendimento
+- Fluxo completo: solicitação → coleta → análise → disponibilização do laudo
+- Laudo acessível pelo médico solicitante e pelo paciente no app
+
+## App Mobile
+
+- **Android:** disponível na Play Store
+- **iOS:** em desenvolvimento
+- Funcionalidades: auto agendamento, anamnese, consulta de agendamentos futuros, prontuário do paciente, acompanhamento e inclusão de exames externos
+
+## Contato
+
+Para contratar o Alfamed: moonlanink@gmail.com

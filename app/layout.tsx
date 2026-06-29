@@ -7,35 +7,40 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Alfamed | Sistema de Gestão de Saúde — Agendamento e Atendimentos",
+    default: "Alfamed | Software de Gestão Clínica para Consultórios e Clínicas",
     template: "%s | Alfamed",
   },
   description:
-    "Alfamed é o sistema de gestão de saúde completo para unidades de saúde. Plataforma web e mobile integrada: profissionais, agendas, atendimentos, prontuário digital e app para pacientes.",
+    "Alfamed é o software de gestão clínica para consultórios e pequenas clínicas, desenvolvido pela Moonlab Ink. Plataforma web e mobile: agendamento, prontuário digital, gestão de exames e app para pacientes.",
   keywords: [
     "alfamed",
     "alfamed sistema de saude",
-    "sistema de saude",
+    "alfamed moonlab",
+    "software gestão clínica",
+    "sistema para consultório médico",
+    "gestão de consultório",
+    "sistema para clínica médica",
+    "software médico",
+    "agendamento médico online",
+    "prontuário eletrônico",
+    "prontuário digital",
+    "gestão de exames médicos",
+    "laudo médico digital",
+    "auto agendamento médico",
     "sistema de gestão de saúde",
     "gestão clínica",
-    "sistema médico",
-    "agendamento médico",
-    "prontuário digital",
-    "gestão de unidade de saúde",
-    "sistema para clínicas",
-    "software médico",
-    "agendamento de consultas",
     "controle de atendimentos",
     "saúde digital",
-    "gestão hospitalar",
     "plataforma de saúde digital",
-    "software gestão de saúde",
-    "gestão de clínica médica",
-    "sistema para unidades de saúde",
+    "software médico brasil",
+    "moonlab ink",
+    "app agendamento médico",
+    "agenda médica online",
+    "sistema para clínicas pequenas",
   ],
-  authors: [{ name: "Alfamed" }],
-  creator: "Alfamed",
-  publisher: "Alfamed",
+  authors: [{ name: "Moonlab Ink" }],
+  creator: "Moonlab Ink",
+  publisher: "Moonlab Ink",
   category: "health",
 
   robots: {
@@ -55,9 +60,9 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: BASE_URL,
     siteName: "Alfamed",
-    title: "Alfamed | Sistema de Gestão de Saúde — Agendamento e Atendimentos",
+    title: "Alfamed | Software de Gestão Clínica para Consultórios e Clínicas",
     description:
-      "Alfamed é o sistema de gestão de saúde completo para unidades de saúde. Plataforma web e mobile: profissionais, agendas, atendimentos e prontuários em um só sistema.",
+      "Alfamed é o software de gestão clínica para consultórios e pequenas clínicas. Web e mobile: agendamento, prontuário, gestão de exames e app para pacientes.",
     images: [
       {
         url: "/og-image.png",
@@ -71,9 +76,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Alfamed | Sistema de Gestão de Saúde",
+    title: "Alfamed | Software de Gestão Clínica",
     description:
-      "Alfamed é o sistema de gestão de saúde completo para unidades de saúde. Profissionais, agendas, atendimentos e prontuários em um só sistema.",
+      "Alfamed é o software de gestão clínica para consultórios e clínicas. Agendamento, prontuário, gestão de exames e app para pacientes — da Moonlab Ink.",
     images: ["/og-image.png"],
   },
 
@@ -114,7 +119,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#website`,
       url: BASE_URL,
       name: "Alfamed",
-      description: "Plataforma integrada de gestão clínica para unidades de saúde",
+      description: "Software de gestão clínica para consultórios e pequenas clínicas",
       inLanguage: "pt-BR",
     },
     {
@@ -123,9 +128,9 @@ const jsonLd = {
       name: "Alfamed",
       applicationCategory: "HealthApplication",
       applicationSubCategory: "Medical Practice Management",
-      operatingSystem: "Web, Android, iOS",
+      operatingSystem: "Web, Android",
       description:
-        "Sistema completo de gestão clínica com módulos de profissionais, agendas, atendimentos, especialidades e procedimentos.",
+        "Software de gestão clínica para consultórios e pequenas clínicas. Módulo Base: profissionais, especialidades, procedimentos, agendas, agendamentos e atendimentos médicos com prontuário digital. Módulo 1 (Gestão de Exames): solicitação de exames internos, fluxo de coleta até laudo. App mobile Android com auto agendamento, anamnese e prontuário do paciente.",
       inLanguage: "pt-BR",
       url: BASE_URL,
       offers: {
@@ -135,10 +140,14 @@ const jsonLd = {
       featureList: [
         "Gestão de profissionais de saúde",
         "Agendamento de consultas",
-        "Prontuário digital",
-        "Gestão de especialidades",
+        "Auto agendamento pelo app",
+        "Anamnese digital",
+        "Prontuário eletrônico",
+        "Gestão de especialidades médicas",
         "Controle de procedimentos",
-        "App mobile para pacientes",
+        "Solicitação de exames internos",
+        "Fluxo de coleta e laudo de exames",
+        "App mobile para pacientes (Android)",
         "Multi-unidades",
         "Controle de acesso por perfil",
       ],
@@ -146,15 +155,24 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: "Alfamed",
-      alternateName: "Alfamed Sistema de Saúde",
-      description: "Alfamed é um sistema de gestão de saúde digital para unidades de saúde, clínicas e consultórios médicos.",
+      name: "Moonlab Ink",
+      alternateName: "Moonlab",
+      description: "Moonlab Ink é a empresa desenvolvedora do Alfamed, software de gestão clínica para consultórios e pequenas clínicas.",
       url: BASE_URL,
+      email: "moonlanink@gmail.com",
       logo: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/og-image.png`,
+        url: `${BASE_URL}/logo.png`,
       },
       sameAs: [],
+      makesOffer: {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "SoftwareApplication",
+          name: "Alfamed",
+          url: BASE_URL,
+        },
+      },
     },
     {
       "@type": "FAQPage",
@@ -165,23 +183,23 @@ const jsonLd = {
           name: "O que é o Alfamed?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "O Alfamed é um sistema de gestão de saúde — uma plataforma web e mobile completa para unidades de saúde. Permite gerenciar profissionais, agendas, atendimentos, especialidades, procedimentos e prontuários digitais em um único lugar.",
+            text: "O Alfamed é um software de gestão clínica para consultórios e pequenas clínicas, desenvolvido pela Moonlab Ink. Oferece plataforma web e app mobile integrados: gestão de profissionais, especialidades, procedimentos, agendas, atendimentos com prontuário digital e módulo de gestão de exames.",
           },
         },
         {
           "@type": "Question",
-          name: "O Alfamed é um sistema de saúde para quais tipos de unidades?",
+          name: "Para quais tipos de clínicas o Alfamed é indicado?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "O Alfamed atende clínicas médicas, consultórios e unidades de saúde de todos os portes. O sistema suporta multi-unidades, permitindo que uma mesma organização gerencie várias unidades com controle de acesso individualizado por perfil.",
+            text: "O Alfamed é voltado para consultórios médicos e pequenas clínicas. O sistema suporta multi-unidades e controle de acesso por perfil (Administrador, Assistente Administrativo, Médico e Paciente via app).",
           },
         },
         {
           "@type": "Question",
-          name: "Quais funcionalidades o Alfamed sistema de saúde oferece?",
+          name: "Quais funcionalidades o Alfamed oferece?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "O Alfamed oferece: gestão de profissionais de saúde, agendamento de consultas, prontuário digital, gestão de especialidades médicas, controle de procedimentos, app mobile para pacientes (Android e iOS), controle de acesso por perfil (médico, administrativo, assistente, paciente) e ServiceDesk para equipe interna.",
+            text: "O Alfamed possui dois módulos: Módulo Base (cadastro e gestão de profissionais, especialidades, procedimentos, agendas, agendamentos e atendimento médico com prontuário e solicitação de exames externos) e Módulo 1 — Gestão de Exames (solicitação de exames internos, fluxo de coleta até disponibilização do laudo, com cargo de Técnico Executante).",
           },
         },
         {
@@ -189,15 +207,31 @@ const jsonLd = {
           name: "O Alfamed tem aplicativo mobile para pacientes?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Sim. O Alfamed disponibiliza app mobile para Android e iOS voltado para pacientes. Pelo app, o paciente pode se cadastrar, visualizar consultas agendadas, acompanhar o status dos atendimentos e acessar prontuário e resultados de exames.",
+            text: "Sim. O app Alfamed está disponível para Android na Play Store. O iOS está em desenvolvimento. Pelo app, o paciente pode fazer auto agendamento, preencher anamnese, visualizar consultas futuras, acessar prontuário e acompanhar exames — incluindo exames externos adicionados ao cadastro.",
           },
         },
         {
           "@type": "Question",
-          name: "Como funciona o agendamento no sistema Alfamed?",
+          name: "Como funciona o agendamento no Alfamed?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "O Alfamed possui um módulo de agendas com grade de horários em tempo real. O administrativo cria as agendas dos médicos e agenda pacientes nas vagas. O status do atendimento é acompanhado em tempo real: Agendado, Em andamento ou Finalizado — tanto no sistema web quanto no app.",
+            text: "O Alfamed possui dois fluxos de agendamento: pelo sistema web, o Assistente Administrativo agenda pacientes nas vagas da grade de horários do médico; pelo app mobile, o próprio paciente realiza o auto agendamento escolhendo especialidade, médico e horário disponível. O status é atualizado em tempo real: Agendado, Em andamento ou Finalizado.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quem desenvolveu o Alfamed?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O Alfamed é um software desenvolvido pela Moonlab Ink. Para contratar ou saber mais, entre em contato pelo e-mail moonlanink@gmail.com.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "O Alfamed tem módulo de gestão de exames?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sim. O Módulo 1 do Alfamed é dedicado à Gestão de Exames. Permite que médicos solicitem exames internos durante o atendimento, com controle do fluxo completo: solicitação, coleta, análise e disponibilização do laudo. O módulo inclui o cargo de Técnico Executante, responsável pelo processo de coleta e registro dos resultados.",
           },
         },
       ],

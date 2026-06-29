@@ -1,6 +1,6 @@
 # Alfamed Landing Page
 
-Landing page institucional do sistema Alfamed — plataforma integrada de gestão clínica para unidades de saúde.
+Landing page institucional do Alfamed — software de gestão clínica para consultórios e pequenas clínicas, desenvolvido pela **Moonlab Ink**.
 
 ## Stack
 

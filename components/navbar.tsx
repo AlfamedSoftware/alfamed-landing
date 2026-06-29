@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 const APP_URL = "https://web-alfamed.vercel.app"
 
@@ -10,6 +11,7 @@ const navLinks = [
   { label: "Funcionalidades", href: "#funcionalidades" },
   { label: "App Mobile", href: "#mobile" },
   { label: "Como funciona", href: "#como-funciona" },
+  { label: "Contato", href: "#contato" },
 ]
 
 export function Navbar() {
@@ -32,16 +34,14 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">A</span>
-            </div>
-            <span
-              className={`font-bold text-lg transition-colors ${
-                scrolled ? "text-gray-900" : "text-white"
-              }`}
-            >
-              Alfamed
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Alfamed"
+              width={120}
+              height={36}
+              className="h-9 w-auto"
+              priority
+            />
           </a>
 
           {/* Desktop nav */}
