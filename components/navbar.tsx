@@ -42,6 +42,13 @@ export function Navbar() {
               className="h-9 w-auto"
               priority
             />
+            <span
+              className={`font-bold text-lg transition-colors ${
+                scrolled ? "text-gray-900" : "text-white"
+              }`}
+            >
+              Alfamed
+            </span>
           </a>
 
           {/* Desktop nav */}
